@@ -1,0 +1,19 @@
+---
+import { Button } from "../components/Button";
+import { Events } from "../components/Events";
+let count = 0;
+---
+
+<html>
+  ...
+  <body>
+    <main>
+      <h1>Fun with Astro, Preact and Islands</h1>
+      <!-- Events component renders client-side but it's children render server-side -->
+      <Events client:load>
+        <button>Yo</button>
+      </Events>
+      <Button text="Click me!" client:load />
+    </main>
+  </body>
+</html>
